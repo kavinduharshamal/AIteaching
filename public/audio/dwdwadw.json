@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "soundFile": "/Users/kavinduharshamal/Desktop/3rYrarProjectMain/r3f-lipsync-tutorial-main/public/audio/dwdwadw.wav",
+    "duration": 0.83
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.12, "value": "X" },
+    { "start": 0.12, "end": 0.40, "value": "D" },
+    { "start": 0.40, "end": 0.54, "value": "B" },
+    { "start": 0.54, "end": 0.83, "value": "X" }
+  ]
+}

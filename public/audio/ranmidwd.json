@@ -1,0 +1,18 @@
+{
+  "metadata": {
+    "soundFile": "/Users/kavinduharshamal/Desktop/3rYrarProjectMain/r3f-lipsync-tutorial-main/public/audio/ranmidwd.wav",
+    "duration": 1.20
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.03, "value": "A" },
+    { "start": 0.03, "end": 0.24, "value": "B" },
+    { "start": 0.24, "end": 0.41, "value": "A" },
+    { "start": 0.41, "end": 0.58, "value": "B" },
+    { "start": 0.58, "end": 0.65, "value": "F" },
+    { "start": 0.65, "end": 0.85, "value": "B" },
+    { "start": 0.85, "end": 0.92, "value": "F" },
+    { "start": 0.92, "end": 1.00, "value": "A" },
+    { "start": 1.00, "end": 1.11, "value": "B" },
+    { "start": 1.11, "end": 1.20, "value": "X" }
+  ]
+}

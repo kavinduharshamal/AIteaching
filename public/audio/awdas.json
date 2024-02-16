@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "soundFile": "/Users/kavinduharshamal/Desktop/3rYrarProjectMain/r3f-lipsync-tutorial-main/public/audio/awdas.wav",
+    "duration": 1.09
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.24, "value": "X" },
+    { "start": 0.24, "end": 0.44, "value": "B" },
+    { "start": 0.44, "end": 0.51, "value": "C" },
+    { "start": 0.51, "end": 0.86, "value": "B" },
+    { "start": 0.86, "end": 1.09, "value": "X" }
+  ]
+}

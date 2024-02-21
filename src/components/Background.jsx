@@ -13,8 +13,8 @@ export const Background = () => {
           side={THREE.BackSide} // Renders the inside of the sphere
         >
           <Gradient
-            colorA="#7FC7D9"
-            colorB="#DCF2F1"
+            colorA="#331950"
+            colorB="#0D5B68"
             axes="y"
             start={0}
             end={-0.5}

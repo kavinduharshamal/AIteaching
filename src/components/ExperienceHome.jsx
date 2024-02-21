@@ -1,15 +1,14 @@
+import React from "react";
 import {
   ContactShadows,
   Environment,
-  OrbitControls,
-  Sky,
-  Text, // Import Text from Drei
+  Text,
+  Text3D,
+  useTexture,
 } from "@react-three/drei";
 import { FirstPage } from "./FirstPage";
 import { useThree } from "@react-three/fiber";
-import { MeshStandardMaterial, PlaneBufferGeometry } from "three";
 import { Background } from "./Background";
-import { MainMenu } from "./MainSetup";
 
 export const ExperienceHome = () => {
   const viewport = useThree((state) => state.viewport);
@@ -17,9 +16,9 @@ export const ExperienceHome = () => {
   return (
     <>
       <Background />
-
       <Environment preset="sunset" />
-      <group position-y={-1}>
+
+      <group position={[0, -1, 0]}>
         <ContactShadows
           opacity={0.42}
           scale={10}
@@ -29,32 +28,17 @@ export const ExperienceHome = () => {
           color="#000000"
         />
         {/* Avatar mesh */}
-        <mesh rotation-x={-Math.PI / 2}>
+        <mesh rotation-x={-Math.PI / 16}>
           <FirstPage />
         </mesh>
-
-        {/* Adding "new experience of teaching text */}
-
-        <Text
-          position={[-2, 2, 0]} // Adjust position as needed
-          color="black" // Text color
-          fontSize={0.1} // Adjust font size as needed
-          anchorX="center" // Centers the text horizontally
-          anchorY="middle" // Centers the text vertically
+        <mesh
+          rotation={[0, Math.PI / 3, 0]}
+          position={[-1.9, 0, 0]}
+          rotation-x={-Math.PI / 16}
         >
-          New Experience of Teaching
-        </Text>
-        {/* add welcome */}
-
-        <Text
-          position={[-2, 1.5, 0]} // Adjust position as needed
-          color="black" // Text color
-          fontSize={0.2} // Adjust font size as needed
-          anchorX="center" // Centers the text horizontally
-          anchorY="middle" // Centers the text vertically
-        >
-          WELCOME!
-        </Text>
+          <FirstPage castShadow />
+        </mesh>
+        <mesh position={[0, 0, 1]} />
       </group>
     </>
   );

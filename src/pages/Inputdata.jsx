@@ -15,7 +15,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import { withRouter } from "react-router-dom/cjs/react-router-dom";
 
-const API_KEY = "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";
+const API_KEY = "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";
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -186,180 +186,224 @@ function Inputdata({ admin }) {
       });
   };
   return admin === "admin" ? (
-    <div className="Inputdata">
-      <div
-        style={{
-          color: "#6DB9EF",
-          width: "400px",
-          height: "100px",
-          fontSize: "30px",
-          paddingLeft: "90px",
-          paddingTop: "50px",
-        }}
-      >
-        Input Of The Page
-      </div>
-      <div>{admin}</div>
-      <a
-        href="/aiteacher"
-        style={{
-          position: "absolute",
-          top: "20px", // Adjust the top position as needed
-          right: "20px", // Adjust the right position as needed
-          color: "blue",
-          textDecoration: "none",
-          fontSize: "20px",
-          width: "70px",
-          height: "70px",
-          padding: "10px",
-          borderRadius: "50%",
-          backgroundColor: "#6DB9EF",
-          color: "white",
-          textDecoration: "none",
-          transition: "transform 0.2s",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)", // Add shadow effect
-        }}
-      >
-        HOME
-      </a>
-
-      <ToastContainer />
-      <div
-        style={{
-          position: "relative",
-          height: "1000px",
-          width: "70%",
-          boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
-        }}
-      >
-        <MainContainer>
-          <ChatContainer>
-            <MessageList
-              scrollBehavior="smooth"
-              typingIndicator={
-                isTyping ? (
-                  <TypingIndicator content="ChatGPT is typing" />
-                ) : null
-              }
+    <div className="Inputdata " style={{ backgroundColor: "#efefef" }}>
+      <div className="felx-col">
+        <div className="mainContainer flex">
+          <div className="inputPanel flex-col">
+            <div
+              className="flex w-1/2 h-1/6"
+              style={{
+                height: "20vh",
+              }}
             >
-              {messages.map((message, i) => {
-                console.log(message);
-                return <Message key={i} model={message} />;
-              })}
-            </MessageList>
-            <MessageInput placeholder="Type message here" onSend={handleSend} />
-          </ChatContainer>
-        </MainContainer>
-      </div>
-      <div
-        style={{
-          height: "800px",
-          width: "100%",
-          paddingTop: "50px",
-        }}
-      >
-        <input
-          style={{
-            width: "30%",
-            height: "5%",
-            /* Add any additional styling for your text field here */
-            margin: "auto", // Center the input horizontally
-            display: "block",
-            margin: "20px",
-            // Make the input a block element
-          }}
-          type="text"
-          className="custom-text-field"
-          placeholder="Enter name of lecture"
-          id="userName"
-          value={lectureName}
-          onChange={(e) => setLectureName(e.target.value)}
-        />
+              <img src={"FirstPageImages/logoBlack.png"} />
+              <img src={"FirstPageImages/TitleBlack.png"} />
+            </div>
+            <div className="textt text-3xl font-bold flex items-center justify-center my-3">
+              ADMIN PANEL
+            </div>
+            <div
+              style={{
+                background: "white",
+                height: "85vh",
+                width: "87%",
+                paddingTop: "50px",
+                boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+              }}
+              className="inputpanel mx-7 rounded-2xl"
+            >
+              <p className="kk flex justify-center items-center">
+                Please provide all the necessary
+                <br /> details below. When uploading
+                <br /> lecture materials, ensure the file <br />
+                format is PNG or JPG. After
+                <br />
+                pressing the submit button, kindly <br />
+                wait for the successful confirmation <br />
+                message indicating that the lecture
+                <br /> has been created.
+              </p>
+              <div className="my-7"></div>
+              <input
+                style={{
+                  width: "80%",
+                  height: "7%",
+                  /* Add any additional styling for your text field here */
+                  margin: "auto", // Center the input horizontally
+                  display: "block",
+                  boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+                  marginBottom: "20px",
+                  border: "1px solid",
+                  padding: "16px",
+                  // Make the input a block element
+                }}
+                className="custom-text-field rounded-lg  border-gray-500 "
+                type="text"
+                placeholder="Enter name of lecture"
+                id="userName"
+                value={lectureName}
+                onChange={(e) => setLectureName(e.target.value)}
+              />
+              <input
+                style={{
+                  width: "80%",
+                  height: "7%",
+                  /* Add any additional styling for your text field here */
+                  margin: "auto", // Center the input horizontally
+                  display: "block",
+                  boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+                  marginBottom: "20px",
+                  border: "1px solid",
+                  padding: "16px",
+                }}
+                className="custom-text-field rounded-lg "
+                type="text"
+                placeholder="Enter name of Batch"
+                id="Batch"
+                value={batch}
+                onChange={(e) => setBatch(e.target.value)}
+              />
+              <input
+                style={{
+                  width: "80%",
+                  height: "7%",
+                  /* Add any additional styling for your text field here */
+                  margin: "auto", // Center the input horizontally
+                  display: "block",
+                  boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+                  marginBottom: "20px",
+                  border: "1px solid",
+                  padding: "16px",
+                }}
+                className="custom-text-field rounded-lg "
+                type="text"
+                placeholder="Enter name of ModuleName"
+                id="modulename"
+                value={moduleName}
+                onChange={(e) => setModuleName(e.target.value)}
+              />
+              <input
+                style={{
+                  width: "80%",
+                  height: "7%",
+                  /* Add any additional styling for your text field here */
+                  margin: "auto", // Center the input horizontally
+                  display: "block",
+                  boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+                  marginBottom: "20px",
+                  border: "1px solid",
+                  padding: "16px",
+                }}
+                className="custom-text-field rounded-lg "
+                type="text"
+                placeholder="Enter name of ModuleCode"
+                id="moduleCode"
+                value={moduleCode}
+                onChange={(e) => setModuleCode(e.target.value)}
+              />
+              <p
+                className="py-3"
+                style={{
+                  width: "70%",
+                  height: "20%",
+                  /* Add any additional styling for your text field here */
+                  margin: "auto", // Center the input horizontally
+                  marginBottom: "2px",
+                }}
+              >
+                Upload the Lecture
+                <br /> Materials (jpg and png)
+              </p>
+              <div className="-my-10">
+                <input
+                  type="file"
+                  onChange={handleFileChange}
+                  className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none  dark:text-neutral-200 dark:file:bg-neutral-600 dark:file:text-neutral-100 dark:focus:border-primary"
+                  style={{
+                    margin: "0 auto", // Changed to "0 auto" to remove top margin
+                    width: "90%",
+                    height: "5%",
+                    display: "flex",
+                    backgroundColor: "#c6e3fa",
+                    color: "#333", // Text color
+                  }}
+                />
+              </div>
+              <div className="my-16">
+                <button
+                  className="generate-button rounded"
+                  style={{
+                    margin: "auto", // Center the input horizontally
+                    display: "block",
+                    width: "30%",
+                    height: "35px",
+                    backgroundColor: "#c6e3fa",
+                  }}
+                  onClick={handleGenerate}
+                >
+                  Generate
+                </button>
+              </div>
+            </div>
+          </div>
 
-        <input
-          style={{
-            width: "30%",
-            height: "5%",
-            /* Add any additional styling for your text field here */
-            margin: "auto", // Center the input horizontally
-            display: "block",
-            margin: "20px",
-            // Make the input a block element
-          }}
-          type="text"
-          className="custom-text-field"
-          placeholder="Enter name of Batch"
-          id="Batch"
-          value={batch}
-          onChange={(e) => setBatch(e.target.value)}
-        />
-        <input
-          style={{
-            width: "40%",
-            height: "5%",
-            /* Add any additional styling for your text field here */
-            margin: "auto", // Center the input horizontally
-            display: "block",
-            margin: "20px",
-            // Make the input a block element
-          }}
-          type="text"
-          className="custom-text-field"
-          placeholder="Enter name of ModuleName"
-          id="modulename"
-          value={moduleName}
-          onChange={(e) => setModuleName(e.target.value)}
-        />
-        <input
-          style={{
-            width: "40%",
-            height: "5%",
-            /* Add any additional styling for your text field here */
-            margin: "auto", // Center the input horizontally
-            display: "block",
-            margin: "20px",
-            // Make the input a block element
-          }}
-          type="text"
-          className="custom-text-field"
-          placeholder="Enter name of ModuleCode"
-          id="moduleCode"
-          value={moduleCode}
-          onChange={(e) => setModuleCode(e.target.value)}
-        />
-        <textarea
-          style={{
-            width: "80%",
-            height: "90%",
-            /* Add any additional styling for your text area here */
-            margin: "auto", // Center the textarea horizontally
-            display: "block",
-            // Make the textarea a block element
-          }}
-          className="custom-text-area"
-          placeholder="Enter text here"
-          id="userInput"
-          value={inputData}
-          onChange={(e) => setInputData(e.target.value)}
-        ></textarea>
-        <div style={{ width: "100%", height: "20px" }}></div>
-
-        <input type="file" onChange={handleFileChange} />
-
-        <button
-          className="generate-button"
-          style={{
-            margin: "auto", // Center the input horizontally
-            display: "block",
-          }}
-          onClick={handleGenerate}
-        >
-          Generate
-        </button>
-        <button onClick={handleUpload}>Upload File</button>
+          <ToastContainer />
+          <div
+            style={{
+              height: "110vh",
+              backgroundColor: "white",
+              width: "130vh",
+              boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+            }}
+            className="flex items-center justify-center my-8 rounded-2xl"
+          >
+            <div
+              className="gptinterface my-16 rounded-lg"
+              style={{
+                position: "relative",
+                height: "100vh",
+                width: "130vh",
+              }}
+            >
+              <MainContainer>
+                <ChatContainer>
+                  <MessageList
+                    scrollBehavior="smooth"
+                    typingIndicator={
+                      isTyping ? (
+                        <TypingIndicator content="ChatGPT is typing" />
+                      ) : null
+                    }
+                  >
+                    {messages.map((message, i) => {
+                      console.log(message);
+                      return <Message key={i} model={message} />;
+                    })}
+                  </MessageList>
+                  <MessageInput
+                    placeholder="Type message here"
+                    onSend={handleSend}
+                  />
+                </ChatContainer>
+              </MainContainer>
+            </div>
+          </div>
+        </div>
+        <div className="textarea" style={{ width: "100%" }}>
+          <textarea
+            style={{
+              height: "40vh",
+              boxShadow: "2px 2px 8px rgba(0, 0, 0, 0.3)",
+              width: "95%",
+            }}
+            className="custom-text-area flex items-center justify-center p-5 mx-10 my-4 rounded-2xl"
+            placeholder="Enter the Generated Text Here"
+            id="userInput"
+            value={inputData}
+            onChange={(e) => setInputData(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="empty h-16"></div>
       </div>
     </div>
   ) : (

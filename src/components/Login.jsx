@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LogoWhite from "./LogoWhite";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -30,13 +31,27 @@ const Login = () => {
 
   return (
     <div
-      className="window bg-slate-700 flex justify-center items-center h-screen w-full rounded-r-xl"
+      className="window flex justify-center items-center h-screen w-full rounded-r-xl relative"
       style={{
         width: "300%",
-        boxShadow: "rgba(0,0,0,0.15 ) 1.95px 1.95px 2.6px",
+        boxShadow: "rgba(0,0,0,0.15) 1.95px 1.95px 2.6px",
       }}
     >
+      <LogoWhite />
+      <div
+        className="w-full h-full bg-slate-500 absolute top-0 left-0 rounded-r-xl"
+        style={{ zIndex: "-1", opacity: "0.4" }}
+      ></div>
       <div className="flex flex-col jutify-center items-center">
+        <label className="text-center text-white py-2 text-4xl font-mono">
+          LOGIN
+        </label>
+        <label
+          className="text-center text-white text-l font-mono"
+          style={{ paddingBottom: "20px" }}
+        >
+          Loging to Your NOVA{" "}
+        </label>
         <input
           type="text"
           placeholder="Username"

@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "soundFile": "/Users/kavinduharshamal/Documents/gitHub/r3f-lipsync-tutorial-main/AIteaching/public/audio/ranmi.wav",
+    "duration": 1.33
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.05, "value": "X" },
+    { "start": 0.05, "end": 0.19, "value": "D" },
+    { "start": 0.19, "end": 0.26, "value": "B" },
+    { "start": 0.26, "end": 0.40, "value": "C" },
+    { "start": 0.40, "end": 0.48, "value": "A" },
+    { "start": 0.48, "end": 0.64, "value": "F" },
+    { "start": 0.64, "end": 1.06, "value": "B" },
+    { "start": 1.06, "end": 1.33, "value": "X" }
+  ]
+}

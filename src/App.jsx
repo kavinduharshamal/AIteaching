@@ -9,7 +9,7 @@ import LoginPageForTeacher from "./pages/loginPageForTeacher";
 import { Suspense } from "react";
 import { Loader, Scroll, ScrollControls } from "@react-three/drei";
 import { HomePageStudent } from "./pages/HomePageStudent";
-import imageCricle from "../public/texture/profile.svg";
+import imageCricle from "../public/texture/human.png";
 import { button } from "leva";
 import "./App.css";
 import { ExperienceLoginPage } from "./components/ExperienceLoginPage";
@@ -17,6 +17,7 @@ import Login from "./components/Login";
 import img1 from "./assets/on.png";
 import img2 from "./assets/off.png";
 import { ExperienceHome } from "./components/ExperienceHome";
+import LogoWhite from "./components/LogoWhite";
 function App() {
   const [isFeedbackVisible, setIsFeedbackVisible] = useState(true);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
@@ -178,25 +179,6 @@ function App() {
               </Suspense>
             </Canvas>
             <Loader />
-
-            <div style={buttonContainerStyle}>
-              <button
-                style={getButtonStyle(hoverGetStarted)}
-                onClick={handleButtonClick}
-              >
-                Get Started
-              </button>
-              <button
-                style={getButton2Style(hoverToggleMusic)}
-                onClick={handleToggleMusic}
-              >
-                {isMusicPlaying ? (
-                  <img src={img1} alt="pause" style={imgStyle} />
-                ) : (
-                  <img src={img2} alt="play" style={imgStyle} />
-                )}
-              </button>
-            </div>
           </div>
         </Route>
 
@@ -234,25 +216,37 @@ function App() {
             <div
               className="title rounded-b-xl shadow-lg"
               style={{
-                backgroundColor: "#7FC7D9",
+                backgroundColor: "#0F4F60",
               }}
             >
-              <br></br>
-
               <div className="flex flex-row items-center justify-between">
-                <div className="kk mx-10 my-3">
-                  <h1 className="title text-4xl text-pretty text-slate-50 font-bold drop-shadow-md">
-                    Lectro Learn Hub
-                  </h1>
-                  <h2 className="subtitle font-semibold">
-                    AI Teacher Assistant{" "}
-                  </h2>
+                <div className="kk">
+                  <div
+                    className="flex top-0 left-0 -my-6"
+                    style={{
+                      zIndex: "1",
+                      opacity: "1",
+                      aspectRatio: "auto",
+                      width: "30vh",
+                    }}
+                  >
+                    <div className=" ">
+                      <img src="public/texture/whiteLogo.png" alt="" />
+                    </div>
+                    <div className="">
+                      <img src="public/texture/Title.png" alt="" />
+                    </div>
+                  </div>
                 </div>
 
                 <div className="flex items-center">
                   <input
                     className="field border rounded-xl px-3 py-2 focus:scale-105 transition-transform duration-300 focus:border-cyan-200"
-                    style={{ borderColor: "#0F1035", margin: "0 3px" }}
+                    style={{
+                      borderColor: "#0F1035",
+                      margin: "0 3px",
+                      width: "15vw",
+                    }}
                     type="text"
                     placeholder="Search"
                     value={searchTerm}
@@ -284,7 +278,7 @@ function App() {
                   <div
                     className="h-4/5 w-full bg-cyan-200 rounded-lg p-6"
                     style={{
-                      backgroundColor: "#DCF2F1",
+                      backgroundColor: "#A7C8CB",
                       boxShadow: "3px 3px 5px #888888",
                     }}
                   >
@@ -326,7 +320,10 @@ function App() {
                         className="border p-2 rounded-md my-2 w-full "
                       />
 
-                      <button className="bg-blue-500 text-white py-2 px-4 rounded-md my-6">
+                      <button
+                        className=" text-white py-2 px-4 rounded-md my-6"
+                        style={{ backgroundColor: "#0F4F60" }}
+                      >
                         Submit
                       </button>
                     </div>
@@ -352,7 +349,7 @@ function App() {
                 </button>
               )}
 
-              <div className="flex flex-col grid grid-cols-5 w-4/5 m-5">
+              <div className="flex flex-col grid grid-cols-5 w-4/5">
                 {filteredData.map((dta) => (
                   <HomePageStudent
                     key={dta.id}

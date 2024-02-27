@@ -33,16 +33,16 @@ export const HomePageStudent = (props) => {
           windowWidth > 1024 ? "w-full" : "w-1/3"
         } h-48 bg-cyan-200 rounded-lg flex justify-start items-center flex-col m-5 text-left shadow-md`}
         onClick={handleClick}
-        style={{ backgroundColor: "#DCF2F1" }}
+        style={{ backgroundColor: "#A7C8CB" }}
       >
         <div
           className={`SecondBox w-5/6 h-1/2 bg-cyan-400 flex my-4 rounded-lg items-end justify-start shadow-md`}
-          style={{ backgroundColor: "#7FC7D9" }}
+          style={{ backgroundColor: "#0F4F60", opacity: "1" }}
         >
           <div className="CSE w-1/2 h-1/3 bg-white mx-2 -my-4 rounded-full flex justify-start items-center font-sans font-bold text-cyan-950">
             <div
               className="circle w-7 h-7 rounded-full mx-1"
-              style={{ backgroundColor: "#7FC7D9" }}
+              style={{ backgroundColor: "#0F4F60" }}
             ></div>
             {department}
           </div>
@@ -59,7 +59,15 @@ export const HomePageStudent = (props) => {
           </div>
         </div>
       </button>
-      <label className="px-8">{id}</label>
+      <label
+        className="name absolute font-mono font-bold text-sm"
+        style={{
+          margin: "auto",
+          paddingLeft: "3vh",
+        }}
+      >
+        {id}
+      </label>
     </div>
   );
 };
